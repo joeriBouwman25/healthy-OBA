@@ -9,16 +9,17 @@
     <script type="module" src="scripts/app.js"></script>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="#"><img src="/assets/images/oba logo.png" alt="" /></a>
+      </nav>
+      <form action="">
+        <label for="search">zoeken</label>
+        <input id="search" placeholder="zoek een boek" type="text" />
+        <button><a href="#search">zoek</a></button>
+      </form>
+    </header>
     <main>
-      <header>
-        <img src="/assets/images/oba logo.png" alt="" />
-        <form action="">
-          <label for="search">zoeken</label>
-          <input id="search" placeholder="zoek een boek" type="text" />
-          <button><a href="#search">zoek</a></button>
-        </form>
-      </header>
-
       <section data-route="results">
         <img src="/assets/images/bidon.png" alt="" />
       </section>
@@ -35,16 +36,16 @@
 
       <section data-route="index">
         <ul>
-          <li><a href="">Voedsel</a></li>
-          <li><a href="">Sport</a></li>
-          <li><a href="">Gewicht</a></li>
-          <li><a href="">Energie</a></li>
-          <li><a href="">Beweging</a></li>
-          <li><a href="">Diët</a></li>
-          <li><a href="">Eiwit</a></li>
-          <li><a href="">Calorieën</a></li>
-          <li><a href="">Recepten</a></li>
-          <li><a href="">Gezond</a></li>
+          <li><a href="#voedsel">Voedsel</a></li>
+          <li><a href="#sport">Sport</a></li>
+          <li><a href="#gewicht">Gewicht</a></li>
+          <li><a href="#energie">Energie</a></li>
+          <li><a href="#beweging">Beweging</a></li>
+          <li><a href="#diet">Diët</a></li>
+          <li><a href="#eiwit">Eiwit</a></li>
+          <li><a href="#calorieen">Calorieën</a></li>
+          <li><a href="#recepten">Recepten</a></li>
+          <li><a href="#gezond">Gezond</a></li>
         </ul>
       </section>
     </main>

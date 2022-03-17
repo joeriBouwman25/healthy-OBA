@@ -1,7 +1,8 @@
-import { getAuthentication, getData, render } from './data.js'
+import { getAuthentication, getData, openLeerMaterialen } from './data.js'
+import { render } from './render.js'
+import { updateUI } from './ui.js'
 
 import '../vendor/routie.min.js'
-import { updateUI } from './ui.js'
 
 export function handleRoutes() {
     routie(
@@ -9,6 +10,11 @@ export function handleRoutes() {
       '': () => {
         updateUI('index')
       },
+        ':voedsel': hash => {
+          updateUI('loading')
+          getData(openLeerMaterialen(hash))
+          updateUI('results')
+        },
       'search': () => {
         updateUI('loading')
         const query = document.getElementById('search').value
