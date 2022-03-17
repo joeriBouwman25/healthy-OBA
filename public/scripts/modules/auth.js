@@ -1,4 +1,3 @@
-
 //Create Authentication URL
 export function getAuthentication(query) {
     // const main = document.querySelector('main');
@@ -20,46 +19,3 @@ export function openLeerMaterialen(searchQuery) {
  
   return [url, searchQuery]
 }
-
-
-export async function getData(res) {
-  const url = res[0]
-  const query = res[1]
-  const data = await fetch(url)
-
-  if(data.status >= 200 && data.status < 400){
-  const response = await data.json()
-      window.location.hash = query;
-      return response
-    }
-
-    else {
-      const backup = await fetch('./scripts/data.json')
-      const backupData = await backup.json()
-        window.location.hash = query;
-        return backupData
-    }
-  }
-
-// filter data
-
-// function filter(data) {
-//   const test = []
-//   const results = data.results
-//   results.forEach(elements => {
-//     const formats = elements.formats
-//     formats.forEach(format => {
-//       const filtered = format.text
-//       test.push(filtered)
-//       console.log(test)
-//       return filtered
-//     })
-//   })
-// }
-
-
-
-
-
-
-

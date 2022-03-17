@@ -1,4 +1,5 @@
-import { getAuthentication, getData, openLeerMaterialen } from './data.js'
+import { getAuthentication, openLeerMaterialen } from './auth.js'
+import { getData }from './data.js'
 import { render } from './render.js'
 import { updateUI } from './ui.js'
 
@@ -13,7 +14,7 @@ export function handleRoutes() {
         ':voedsel': hash => {
           updateUI('loading')
           getData(openLeerMaterialen(hash))
-          updateUI('results')
+          updateUI('webResults')
         },
       'search': () => {
         updateUI('loading')
