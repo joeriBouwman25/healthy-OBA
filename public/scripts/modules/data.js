@@ -11,7 +11,7 @@ export async function getData(res) {
     }
 
     else {
-      const backup = await fetch('./scripts/data.json')
+      const backup = await fetch('..data.json')
       const backupData = await backup.json()
         window.location.hash = query;
         return await backupData
@@ -22,7 +22,7 @@ export async function getData(res) {
   export async function getOpenData(res) {
     const url = res[0]
     const data = await fetch(url)
-    
+
     if(data.status >= 200 && data.status < 400){
     const response = await data.json()
 
@@ -30,7 +30,7 @@ export async function getData(res) {
       }
   
       else {
-        const backup = await fetch('./scripts/data.json')
+        const backup = await fetch('../data.json')
         const backupData = await backup.json()
           return await backupData
       }

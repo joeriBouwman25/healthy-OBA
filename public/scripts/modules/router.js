@@ -11,19 +11,19 @@ export function handleRoutes() {
       '': () => {
         updateUI('index')
       
-       
-      // 'search': () => {
-      //   updateUI('loading')
-      //   const query = document.getElementById('search').value
-      //   getAuthentication(query)
-      //       .then(auth => getData(auth))
-      //       .then(response => render(response))
-      //       updateUI('results')
+      },
+      'search': () => {
+        updateUI('loading')
+        const query = document.getElementById('search').value
+        getAuthentication(query)
+            .then(auth => getData(auth))
+            .then(response => render(response))
+            updateUI('results')
       
         },
-        'voedsel': hash => {
+        'voeding': () => {
           updateUI('loading')
-          openLeerMaterialen(hash)
+          openLeerMaterialen('voedsel')
             .then(auth => getOpenData(auth))
             .then(response => render(response))
           updateUI('webResults')
