@@ -12,11 +12,13 @@ export async function getAuthentication(query) {
 
 //Create authentication for open leermaterialen
 export async function openLeerMaterialen(searchQuery) {
-  const cors = 'https://cors-anywhere.herokuapp.com/';
+  const cors =  'https://cors-anywhere.herokuapp.com/';
   const query = await searchQuery
-  const endpoint = 'https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=';
-  const key = '166270b1475823ac569dab2a55e8aa3a';
-  const url = `${cors}https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=${query}+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`;
+  const endpoint = 'http://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=';
+  const key = '76f45dfa187d66be5fd6af05573eab04';
+  const url = `${cors}${endpoint}${query}+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`;
+  
  
   return [url, searchQuery]
 }
+
