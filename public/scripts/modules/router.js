@@ -17,7 +17,7 @@ export function handleRoutes() {
         getAuthentication(query)
         .then(auth => getData(auth))
         .then(response => render(response))
-        updateUI('results')
+
       
         },
         'voeding': () => {
