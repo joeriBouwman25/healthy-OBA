@@ -7,8 +7,8 @@ Ik heb dit gemaakt in de style van de OBA en geprobeerd om hierbij het thema van
 
 ## look
 
-<img src="https://github.com/joeriBouwman25/Foodscanner/blob/main/assets/screen%221.png">
-<img src="https://github.com/joeriBouwman25/Foodscanner/blob/main/assets/screen%222.png">
+<img src="https://github.com/joeriBouwman25/Foodscanner/blob/main/assets/screen%201.png">
+<img src="https://github.com/joeriBouwman25/Foodscanner/blob/main/assets/screen%202.png">
 
 ## About
 
