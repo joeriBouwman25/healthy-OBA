@@ -21,10 +21,11 @@ export async function getData(res) {
 
   export async function getOpenData(res) {
     const url = res[0]
+    const query = res[1]
     const data = await fetch(url)
-
     if(data.status >= 200 && data.status < 400){
-    const response = await data.json()
+      const response = await data.json()
+      window.location.hash = query;
 
         return await response
       }
