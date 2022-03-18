@@ -1,6 +1,6 @@
 import { getAuthentication, openLeerMaterialen } from './auth.js'
 import { getData, getOpenData }from './data.js'
-import { render } from './render.js'
+import { render, renderArticles } from './render.js'
 import { updateUI } from './ui.js'
 
 import '../vendor/routie.min.js'
@@ -13,20 +13,18 @@ export function handleRoutes() {
       
       },
       'search': () => {
-        updateUI('loading')
         const query = document.getElementById('search').value
         getAuthentication(query)
-            .then(auth => getData(auth))
-            .then(response => render(response))
-            updateUI('results')
+        .then(auth => getData(auth))
+        .then(response => render(response))
+        updateUI('results')
       
         },
         'voeding': () => {
-          updateUI('loading')
           openLeerMaterialen('voedsel')
             .then(auth => getOpenData(auth))
-            .then(response => render(response))
-          updateUI('webResults')
+            .then(response => renderArticles(response))
+            updateUI('webResults')
         }
     })
 }
