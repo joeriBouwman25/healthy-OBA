@@ -13,9 +13,10 @@ export async function getAuthentication(query) {
 //Create authentication for open leermaterialen
 export async function openLeerMaterialen(searchQuery) {
   const cors = 'https://cors-anywhere.herokuapp.com/';
+  const query = await searchQuery
   const endpoint = 'https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=';
   const key = '166270b1475823ac569dab2a55e8aa3a';
-  const url = `${cors}https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=${searchQuery}+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`;
+  const url = `${cors}https://obaliquid.staging.aquabrowser.nl/onderwijs/api/v1/search/?q=${query}+NOT+lom.lifecycle.contribute.publisher%3Dwikipedia&authorization=${key}&output=json`;
  
   return [url, searchQuery]
 }

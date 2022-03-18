@@ -11,7 +11,7 @@ export async function getData(res) {
     }
 
     else {
-      const backup = await fetch('..data.json')
+      const backup = await fetch('../scripts/data.json')
       const backupData = await backup.json()
         window.location.hash = query;
         return await backupData
@@ -30,7 +30,7 @@ export async function getData(res) {
       }
   
       else {
-        const backup = await fetch('../data.json')
+        const backup = await fetch('./scripts/data.json')
         const backupData = await backup.json()
           return await backupData
       }
