@@ -1,5 +1,5 @@
 import { getAuthentication, openLeerMaterialen } from './auth.js'
-import { getData }from './data.js'
+import { getData, getOpenData }from './data.js'
 import { render } from './render.js'
 import { updateUI } from './ui.js'
 
@@ -11,18 +11,21 @@ export function handleRoutes() {
       '': () => {
         updateUI('index')
       },
-        ':voedsel': hash => {
-          updateUI('loading')
-          getData(openLeerMaterialen(hash))
-          updateUI('webResults')
-        },
+       
       'search': () => {
         updateUI('loading')
         const query = document.getElementById('search').value
-        getData(getAuthentication(query))
+        getAuthentication(query)
+            .then(auth => getData(auth))
+            .then(response => render(response))
+            updateUI('results')
         },
-        ':query': () => {
-          updateUI('results')
+        'voedsel': hash => {
+          updateUI('loading')
+          openLeerMaterialen(hash)
+            .then(auth => getOpenData(auth))
+            .then(response => render(response))
+          updateUI('webResults')
         }
     })
 }
